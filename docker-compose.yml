@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017' # Ubah port ini jika diperlukan
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root # Ganti dengan username Anda
+      MONGO_INITDB_ROOT_PASSWORD: root # Ganti dengan password Anda
+      MONGO_INITDB_DATABASE: db2 # Ganti dengan nama database
+    volumes:
+      - mongodb_data:/data/db # Mount volume untuk menyimpan data MongoDB
+
+volumes:
+  mongodb_data:
